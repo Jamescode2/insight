@@ -1,178 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    /* font-family: 'Roboto', sans-serif;  */
 }
 
-#container{
-    min-height: 100vh;
-    min-width: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:40% min-content min-content 1fr 1fr 1fr min-content ;
-}
-
+/*-----header-----*/
 
 header{
-    grid-column: span 3;
-    grid-row: 1;
-    /* background-color: blue; */
-    background-image: url(images/phare.jpg);
+    background-image: url(images/phare.png);
+    background-size: cover;
+    height: 1200px;
 }
 
-.our{
-    grid-column: span 3;
-    grid-row: 2/3;
-    background-color: red;
-}
-
-nav{
-    grid-column: span 3;
-    grid-row: 3/4;
-    background-color: aqua;
- 
-}
-
-ul{
+header .connexion {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+a:link{
+    text-decoration: none;
+}
+header .login {
+    background-color: yellow;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 3em;
+    margin-top: 3%;
+    margin-right: 7%;
+    border-radius: 96px;
+} 
+
+header .login:hover {
+    opacity: 50%;
+    cursor: pointer;
+}
+
+header h1 {
+    margin-left: 14%;
+    padding-top: 340px;
+    font-size: 5rem;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+header p {
+    margin-left: 15.5%;
+    color: rgba(125, 126, 125, 0.629);
+    font-weight: bolder;
+    font-size: 3.7rem;
+} 
+
+/* --------------- MAIN, NAVBAR----------------*/
+
+main h1 {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 100;
+}
+
+main p {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+main nav {
+    width: 90%;
+    margin: 60px auto;
+}
+
+
+main nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 0.5%;
+}
+
+main nav ul li {
+    padding: 5px 25px;
+    border: 2px solid gray;
+}
+
+main nav ul li:hover {
+    color: white;
+    background-color: rgb(61, 61, 207);
+    cursor: pointer;
+}
+
+
+/* --------------- MAIN, grid----------------*/
+
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 13px;
+    grid-row-gap: 13px;
+    height: 100%;
+    margin: 0 20%;
+    }
+
+    
+.div1 { 
+    grid-area: 1 / 1 / 2 / 2;
+    height: 250px;
+    background-color: rgb(65, 196, 206);
+    background-image: url(images/icons8-temps-pluvieux-100.png);
+    background-repeat: no-repeat;
    
 }
-li{
-    border: 1px solid grey;
-    margin: 15px;
-    padding: 10px 15px;
-    list-style-type: none;
+
+.div2 { 
+    grid-area: 1 / 2 / 2 / 3; 
+    background-color: rgb(160, 159, 95);
+    background-image: url(images/icons8-pièces-de-monnaie-100.png);
+    background-repeat: no-repeat;
+    
 }
-a:link{
-    text-decoration: none;
+.div3 { 
+    grid-area: 1 / 3 / 2 / 4; 
+    background-color: rgb(62, 62, 245);
+    background-image: url(images/icons8-fusée-100.png);
+    background-repeat: no-repeat;
+    
+}
+.div4 { 
+    grid-area: 2 / 1 / 3 / 2; 
+    background-color: rgb(177, 132, 36);
+    background-image: url(images/icons8-portefeuille-de-cartes-100.png);
+    background-repeat: no-repeat;
+}
+.div5 { 
+    grid-area: 2 / 2 / 3 / 4; 
+    background-color: rgb(255, 72, 0);
+    background-image: url(images/icons8-calculatrice-100.png);
+    background-repeat: no-repeat;
+}
+.div6 { 
+    grid-area: 3 / 1 / 4 / 3; 
+    background-color: rgb(21, 121, 51);
+    background-image: url(images/icons8-bank-100.png);
+    background-repeat: no-repeat;
+}
+.div7 {
+    grid-area: 3 / 3 / 4 / 4; 
+    background-color: rgb(92, 88, 88);
+    background-image: url(images/icons8-immobilier-100.png);
+    background-repeat: no-repeat;
 }
 
-a:hover{
-    background-color: blue;
+
+/* BOUTON DE FIN */
+
+.more {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.button-more {
+    padding: 10px 60px;
+    border: 2px solid grey;
+    border-radius: 96px/ 85px;
+}
+
+.button-more:hover {
+    cursor: pointer;
+    background-color: rgb(29, 14, 162);
+    color: aliceblue;
 }
 
 
-.img1{
-    grid-column: 1/2;
-    grid-row: 4/5;
-    background-color: antiquewhite;
-}
+/* responsive */
+@media screen and (max-width: 730px) {
 
-.img2{
-    grid-column: 2/3;
-    grid-row: 4/5;
-    background-color: antiquewhite;
-}
+    main nav ul {
+        display: flex;
+        flex-direction: column;
+    }
 
-.img3{
-    grid-column: 3/4;
-    grid-row: 4/5;
-}
-.img4{
-    grid-column: 2/4;
-    grid-row: 5/6;
-}
-.img5{
-    grid-column: 2/3;
-    grid-row: 5/6;
-}
-.img6{
-    grid-column: 1/3;
-    grid-row: 6/7;
-}
-.img7{
-    grid-column: 3/4;
-    grid-row: 6/7;
-}
+    main nav ul li {
+        text-align: center;
+    }
 
-.more{
-    grid-column: 2/3;
-    grid-row: 7/8;
-    background-color: aquamarine;
-}
-
-@media (max-width:640px)
-{
-    .container
-    {
+    .grid {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: min-content;
-        min-height: 100vh;
-    }
-    
-header{
-    grid-column: 1;
-    grid-row: 1;
-    /* background-color: blue; */
-    background-image: url(images/phare.jpg);
-}
-
-.our{
-    grid-column: 1;
-    grid-row: 1;
-    background-color: red;
-}
-
-nav{
-    grid-column: 1;
-    grid-row: 1;
-    background-color: aqua;
- 
-}
-
-
-li{
-    border: 1px solid grey;
-    margin: 15px;
-    padding: 10px 15px;
-    list-style-type: none;
-}
-a:link{
-    text-decoration: none;
-}
-
-a:hover{
-    background-color: blue;
-}
-
-
-.img1{
-    grid-column: 1;
-    grid-row: 1;
-    background-color: antiquewhite;
-}
-
-.img2{
-    grid-column: 1;
-    grid-row: 1;
-    background-color: antiquewhite;
-}
-
-.img3{
-    grid-column: 1;
-    grid-row: 1;
-}
-.img4{
-    grid-column: 1;
-    grid-row: 1;
-}
-.img5{
-    grid-column: 1;
-    grid-row: 1;
-}
-.img6{
-    grid-column: 1;
-    grid-row: 1;
-}
-.img7{
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.more{
-    grid-column: 1;
-    grid-row: 1;
-    background-color: aquamarine;
-}
+        grid-template-rows: repeat(7, 1fr);
+        grid-column-gap: 13px;
+        grid-row-gap: 13px;
+        }
+        
+        .div1 { 
+            grid-area: 1 / 1 / 2 / 2; 
+        }
+        .div2 { 
+            grid-area: 2 / 1 / 3 / 2; 
+        }
+        .div3 { 
+            grid-area: 3 / 1 / 4 / 2; 
+        }
+        .div4 { 
+            grid-area: 4 / 1 / 5 / 2; 
+        }
+        .div5 { 
+            grid-area: 5 / 1 / 6 / 2; 
+        }
+        .div6 { 
+            grid-area: 6 / 1 / 7 / 2; 
+        }
+        .div7 { 
+            grid-area: 7 / 1 / 8 / 2; 
+        }
 }
